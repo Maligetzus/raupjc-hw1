@@ -61,13 +61,13 @@ namespace Zad3
 
         public X GetElement(int index)
         {
-            if (index >= _lastIndex) throw new IndexOutOfRangeException();
+            if (index > _lastIndex) throw new IndexOutOfRangeException();
             return _internalStorage[index];
         }
 
         public int IndexOf(X item)
         {
-            for (int i = 0; i < _lastIndex; i++)
+            for (int i = 0; i <= _lastIndex; i++)
             {
                 if (Object.Equals(_internalStorage[i], item))
                 {
@@ -142,6 +142,7 @@ namespace Zad3
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }
+        }
+
     }
 }
